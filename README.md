@@ -1,8 +1,10 @@
 # SSH-Remote-Server-Setup
-Secure SSH access with multiple keys and Fail2Ban protection — setup guide and documentation.
+Secure SSH access with multiple keys and Fail2Ban protection 🔏     — setup guide and documentation.
 
 # 🔗 Project URL:
-```https://roadmap.sh/projects/ssh-remote-server-setup```
+
+[Roadmap.sh Project:- SSH Remote Server Setup](https://roadmap.sh/projects/ssh-remote-server-setup)
+
 
 # Project Goal
 - Configure a remote Linux server (AWS EC2 used here)
@@ -10,12 +12,18 @@ Secure SSH access with multiple keys and Fail2Ban protection — setup guide and
 - Optionally configure ~/.ssh/config for easy SSH alias
 - Stretch goal: Install Fail2Ban to protect against brute force attacks
 
+Repository Structure 📂
+```
+.
+├── README.md                # Project documentation
+└── screenshots/             # Project screenshots 📸
+```
+
 # Steps Taken
 1. Provisioned a Remote Linux Server
 2. Created an al2023 EC2 instance on AWS
 3. Allowed SSH (port 22) in the AWS security group firewall
 
-<img width="1588" height="729" alt="Screenshot 2025-08-26 175549" src="https://github.com/user-attachments/assets/a2f38dc2-3634-40c4-b662-c739479b9dd1" />
 
 # 2. Generated Two SSH Key Pairs
 
@@ -68,12 +76,12 @@ On local machine added ~/.ssh/config:
 ```
 Host myserver-key1
     HostName <server-ip>
-    User ubuntu
+    User ec2-user
     IdentityFile ~/.ssh/server_key1
 
 Host myserver-key2
     HostName <server-ip>
-    User ubuntu
+    User ec2-user
     IdentityFile ~/.ssh/server_key2
 
 ```
